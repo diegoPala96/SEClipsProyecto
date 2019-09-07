@@ -1,0 +1,313 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fnil\fcharset0 Courier New;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\widctlpar\sa160\sl252\slmult1\f0\fs22\lang12298 (defglobal ?*acumulador* = 0)\par
+\par
+(deftemplate persona-personalidad\par
+\par
+    (slot nombre\par
+        \lang1033 (type STRING)\par
+        (default "")\par
+    )\par
+; 1Cuando est\'e1 con mucha gente se averg\'fcenza y se retrae\par
+    (slot pregunta1 \par
+\tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;2Se fija mucho en los detalles de los dem\'e1s; c\'f3mo act\'faan, c\'f3mo se visten, etc., para imitarlos\par
+    (slot pregunta2 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;3 Frecuentemente se muestra agresivo y a la defensiva, sobretodo con la familia\par
+    (slot pregunta3\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;4 A menudo pregunta a varias personas sobre una misma duda o problema (a padres, hermanos, amigos\'85)\par
+    (slot pregunta4 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;5 Siempre antepone las opiniones de sus amigos a las de su familia\par
+    (slot pregunta5\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;6 No le importa que me acerque a hablar con \'e9l cuando est\'e1 con sus amigos\par
+    (slot pregunta6 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;7 Sus amigos suelen seguirle, no es extra\'f1o que parezca el l\'edder del grupo\par
+    (slot pregunta7\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;8 Continuamente quiere comprarse ropa, juegos, etc., nunca est\'e1 satisfecho con lo que tiene\par
+    (slot pregunta8 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;9 Es muy extrovertido\par
+    (slot pregunta9\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;10 Es m\'e1s bien tranquilo, aunque en ocasiones se puede poner nervioso (por ex\'e1menes, por ejemplo), en general no se muestra tenso\par
+    (slot pregunta10 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;11 Le afectan mucho las cr\'edticas, sobretodo si se la hace un amigo o compa\'f1ero\par
+    (slot pregunta11\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;12 Cuando toma una decisi\'f3n, dif\'edcilmente la cambia\par
+    (slot pregunta12 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;13 Cuando tiene que hablar frente a un grupo m\'e1s o menos grande de personas (por ejemplo en clase), se pone nervioso y muy ansioso\par
+    (slot pregunta13\par
+\tab (type STRING)\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qr\tab (default "")\tab\par
+
+\pard\widctlpar\sa160\sl252\slmult1     )\par
+;14 Tiene una idea clara y objetiva de c\'f3mo es, no se infravalora\par
+    (slot pregunta14 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;15 Le resulta f\'e1cil hacer nuevas amistades\par
+    (slot pregunta15\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;16 Frecuentemente habla de sus amigos como si fueran mejores que \'e9l, alabando todo lo que dicen y hacen\par
+    (slot pregunta16 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+;17 s muy indeciso a la hora de arreglarse o vestirse, nunca se ve lo suficientemente bien\par
+    (slot pregunta17\par
+\tab (type STRING)\par
+\tab (default "")\tab\par
+    )\par
+;18 Muchas veces creo que se averg\'fcenza de su familia\par
+    (slot pregunta18 \par
+    \tab (type STRING)\par
+\tab (default "")\par
+    )\par
+)\par
+\par
+
+\pard\f1 (defrule P_uno\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta1 ?p1)\par
+\tab )\par
+=>\par
+    (if (eq ?p1 no)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_dos\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta2 ?p2)\par
+\tab )\par
+=>\par
+    (if (eq ?p2 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_tres\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta3 ?p3)\par
+\tab )\par
+=>\par
+    (if (eq ?p3 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_cuatro\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta4 ?p4)\par
+\tab )\par
+=>\par
+    (if (eq ?p4 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_cinco\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta5 ?p5)\par
+\tab )\par
+=>\par
+    (if (eq ?p5 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_seis\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta6 ?p6)\par
+\tab )\par
+=>\par
+    (if (eq ?p6 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_siete\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta7 ?p7)\par
+\tab )\par
+=>\par
+    (if (eq ?p7 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_ocho\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta8 ?p8)\par
+\tab )\par
+=>\par
+    (if (eq ?p8 no)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_nueve\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta9 ?p9)\par
+\tab )\par
+=>\par
+    (if (eq ?p9 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_diez\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta10 ?p10)\par
+\tab )\par
+=>\par
+    (if (eq ?p10 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_once\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta11 ?p11)\par
+\tab )\par
+=>\par
+    (if (eq ?p11 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_doce\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta12 ?p12)\par
+\tab )\par
+=>\par
+    (if (eq ?p12 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_trece\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta13 ?p13)\par
+\tab )\par
+=>\par
+    (if (eq ?p13 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_catorce\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta14 ?p14)\par
+\tab )\par
+=>\par
+    (if (eq ?p14 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_quince\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta15 ?p15)\par
+\tab )\par
+=>\par
+    (if (eq ?p15 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_dieciseis\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta16 ?p16)\par
+\tab )\par
+=>\par
+    (if (eq ?p16 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_diecisiciete\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta17 ?p17)\par
+\tab )\par
+=>\par
+    (if (eq ?p17 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+(defrule P_dieciocho\par
+\tab (persona-\f0\lang12298 personalidad\f1\lang1033\par
+\tab\tab (pregunta18 ?p18)\par
+\tab )\par
+=>\par
+    (if (eq ?p18 si)\par
+        then \par
+            (bind ?*acumulador* (+ ?*acumulador* 1))\par
+    )\par
+)\par
+\par
+\par
+\par
+(defrule analizar-test\par
+    (persona-personalidad \par
+\tab\tab\par
+\tab )\par
+\tab\par
+\tab =>\par
+    if(and(>= ?*\f0\lang12298 acumulador\f1\lang1033 * 0)(<= ?*\f0\lang12298 acumulador\f1\lang1033 * 5)\par
+        then\par
+            (printout t  " Tu hijo es una persona que se deja llevar f\'e1cilmente por los comentarios de sus amigos. Pretende en todo momento gustar a\'fan teniendo que hacer o decir cosas que normalmente no dir\'eda o har\'eda, pero lo hace siempre para complacer. No sabe aceptar las cr\'edticas, es inseguro de s\'ed mismo y le falta autoestima para enfrentarse a los dem\'e1s y al temor de ser rechazado de alg\'fan modo." crlf)\par
+     )\par
+     if(and(>= ?*\f0\lang12298 acumulador\f1\lang1033 * 6)(<= ?*\f0\lang12298 acumulador\f1\lang1033 * 12)\par
+        then\par
+            (printout t  " Tu hijo seguramente est\'e1 pasando por una etapa de dudas y de necesidad de aceptaci\'f3n por parte de sus semejantes. No es que se deje influenciar en exceso, pero s\'ed se toma muy en serio todos los comentarios y opiniones de sus amigos, a veces esto le impide ver la realidad de sus verdaderos deseos y necesidades." crlf)\par
+     )\par
+     if(and(>= ?*\f0\lang12298 acumulador\f1\lang1033 * 13)(<= ?*\f0\lang12298 acumulador\f1\lang1033 * 18)\par
+        then\par
+            (printout t " Seguramente tu hijo ha sido siempre y lo sigue siendo un l\'edder nato. Tiene una fuerte personalidad sin complejos que no duda sacar a la luz tanto en casa como fuera de ella, con sus amigos." crlf)\par
+     )   \par
+     )\par
+\par
+\par
+\par
+\par
+}
+ 

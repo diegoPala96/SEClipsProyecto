@@ -1,0 +1,311 @@
+(defglobal ?*acumulador* = 0)
+
+(deftemplate persona-personalidad
+
+    (slot nombre
+        (type STRING)
+        (default "")
+    )
+; 1Cuando está con mucha gente se avergüenza y se retrae
+    (slot pregunta1 
+	(type STRING)
+	(default "")
+    )
+;2Se fija mucho en los detalles de los demás; cómo actúan, cómo se visten, etc., para imitarlos
+    (slot pregunta2 
+    	(type STRING)
+	(default "")
+    )
+;3 Frecuentemente se muestra agresivo y a la defensiva, sobretodo con la familia
+    (slot pregunta3
+	(type STRING)
+	(default "")	
+    )
+;4 A menudo pregunta a varias personas sobre una misma duda o problema (a padres, hermanos, amigos…)
+    (slot pregunta4 
+    	(type STRING)
+	(default "")
+    )
+;5 Siempre antepone las opiniones de sus amigos a las de su familia
+    (slot pregunta5
+	(type STRING)
+	(default "")	
+    )
+;6 No le importa que me acerque a hablar con él cuando está con sus amigos
+    (slot pregunta6 
+    	(type STRING)
+	(default "")
+    )
+;7 Sus amigos suelen seguirle, no es extraño que parezca el líder del grupo
+    (slot pregunta7
+	(type STRING)
+	(default "")	
+    )
+;8 Continuamente quiere comprarse ropa, juegos, etc., nunca está satisfecho con lo que tiene
+    (slot pregunta8 
+    	(type STRING)
+	(default "")
+    )
+;9 Es muy extrovertido
+    (slot pregunta9
+	(type STRING)
+	(default "")	
+    )
+;10 Es más bien tranquilo, aunque en ocasiones se puede poner nervioso (por exámenes, por ejemplo), en general no se muestra tenso
+    (slot pregunta10 
+    	(type STRING)
+	(default "")
+    )
+;11 Le afectan mucho las críticas, sobretodo si se la hace un amigo o compañero
+    (slot pregunta11
+	(type STRING)
+	(default "")	
+    )
+;12 Cuando toma una decisión, difícilmente la cambia
+    (slot pregunta12 
+    	(type STRING)
+	(default "")
+    )
+;13 Cuando tiene que hablar frente a un grupo más o menos grande de personas (por ejemplo en clase), se pone nervioso y muy ansioso
+    (slot pregunta13
+	(type STRING)
+	(default "")	
+    )
+;14 Tiene una idea clara y objetiva de cómo es, no se infravalora
+    (slot pregunta14 
+    	(type STRING)
+	(default "")
+    )
+;15 Le resulta fácil hacer nuevas amistades
+    (slot pregunta15
+	(type STRING)
+	(default "")	
+    )
+;16 Frecuentemente habla de sus amigos como si fueran mejores que él, alabando todo lo que dicen y hacen
+    (slot pregunta16 
+    	(type STRING)
+	(default "")
+    )
+;17 s muy indeciso a la hora de arreglarse o vestirse, nunca se ve lo suficientemente bien
+    (slot pregunta17
+	(type STRING)
+	(default "")	
+    )
+;18 Muchas veces creo que se avergüenza de su familia
+    (slot pregunta18 
+    	(type STRING)
+	(default "")
+    )
+)
+
+(defrule P_uno
+	(persona-personalidad
+		(pregunta1 ?p1)
+	)
+=>
+    (if (eq ?p1 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_dos
+	(persona-personalidad
+		(pregunta2 ?p2)
+	)
+=>
+    (if (eq ?p2 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_tres
+	(persona-personalidad
+		(pregunta3 ?p3)
+	)
+=>
+    (if (eq ?p3 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_cuatro
+	(persona-personalidad
+		(pregunta4 ?p4)
+	)
+=>
+    (if (eq ?p4 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_cinco
+	(persona-personalidad
+		(pregunta5 ?p5)
+	)
+=>
+    (if (eq ?p5 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_seis
+	(persona-personalidad
+		(pregunta6 ?p6)
+	)
+=>
+    (if (eq ?p6 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_siete
+	(persona-personalidad
+		(pregunta7 ?p7)
+	)
+=>
+    (if (eq ?p7 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_ocho
+	(persona-personalidad
+		(pregunta8 ?p8)
+	)
+=>
+    (if (eq ?p8 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_nueve
+	(persona-personalidad
+		(pregunta9 ?p9)
+	)
+=>
+    (if (eq ?p9 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_diez
+	(persona-personalidad
+		(pregunta10 ?p10)
+	)
+=>
+    (if (eq ?p10 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_once
+	(persona-personalidad
+		(pregunta11 ?p11)
+	)
+=>
+    (if (eq ?p11 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_doce
+	(persona-personalidad
+		(pregunta12 ?p12)
+	)
+=>
+    (if (eq ?p12 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_trece
+	(persona-personalidad
+		(pregunta13 ?p13)
+	)
+=>
+    (if (eq ?p13 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_catorce
+	(persona-personalidad
+		(pregunta14 ?p14)
+	)
+=>
+    (if (eq ?p14 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_quince
+	(persona-personalidad
+		(pregunta15 ?p15)
+	)
+=>
+    (if (eq ?p15 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_dieciseis
+	(persona-personalidad
+		(pregunta16 ?p16)
+	)
+=>
+    (if (eq ?p16 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_diecisiciete
+	(persona-personalidad
+		(pregunta17 ?p17)
+	)
+=>
+    (if (eq ?p17 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+(defrule P_dieciocho
+	(persona-personalidad
+		(pregunta18 ?p18)
+	)
+=>
+    (if (eq ?p18 "si")
+        then 
+            (bind ?*acumulador* (+ ?*acumulador* 1))
+    )
+)
+
+
+
+(defrule analizar-test
+    (persona-personalidad 
+		
+	)
+	
+	=>
+	(open "datos.txt" data	"a")
+	
+    if(and(>= ?*acumulador* 0)(<= ?*acumulador* 5)
+        then
+        	(printout data "puntaje ="  ?*acumulador* crlf)
+            (printout data  " Tu hijo es una persona que se deja llevar fácilmente por los comentarios de sus amigos. Pretende en todo momento gustar aún teniendo que hacer o decir cosas que normalmente no diría o haría, pero lo hace siempre para complacer. No sabe aceptar las críticas, es inseguro de sí mismo y le falta autoestima para enfrentarse a los demás y al temor de ser rechazado de algún modo." crlf)
+     )
+     if(and(>= ?*acumulador* 6)(<= ?*acumulador* 12)
+        then
+        	(printout data "puntaje ="  ?*acumulador*  crlf)
+            (printout data  " Tu hijo seguramente está pasando por una etapa de dudas y de necesidad de aceptación por parte de sus semejantes. No es que se deje influenciar en exceso, pero sí se toma muy en serio todos los comentarios y opiniones de sus amigos, a veces esto le impide ver la realidad de sus verdaderos deseos y necesidades." crlf)
+     )
+     if(and(>= ?*acumulador* 13)(<= ?*acumulador* 18)
+        then
+       		(printout data "puntaje =" ?*acumulador* crlf)
+            (printout data " Seguramente tu hijo ha sido siempre y lo sigue siendo un líder nato. Tiene una fuerte personalidad sin complejos que no duda sacar a la luz tanto en casa como fuera de ella, con sus amigos." crlf)
+     )  
+     (close data)
+     )
+
+
+
